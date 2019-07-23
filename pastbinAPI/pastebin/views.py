@@ -21,10 +21,10 @@ class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class UserList(generics.ListAPIView):
-    model = User
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class UserDetail(generics.RetrieveAPIView):
-    model = User
+    queryset = User.objects.all()
     serializer_class = UserSerializer
