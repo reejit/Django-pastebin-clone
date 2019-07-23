@@ -9,7 +9,7 @@ class SnipprtSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Snippet
-        fields = ['id', 'title', 'content', 'created_at', 'owner']
+        fields = ['url', 'id', 'title', 'content', 'created_at', 'owner']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
