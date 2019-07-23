@@ -3,8 +3,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class UserModel(AbstractUser):
-    # Flag to check if user is guest
-    is_guest = models.BooleanField(default=False)
 
     def __str__(self):
         return self.username
