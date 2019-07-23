@@ -7,7 +7,7 @@ urlpatterns = [
     path('snippets/', views.SnippetList.as_view(), name='snippet-list'),
     path('snippets/<int:pk>/', views.SnippetDetail.as_view(), name='snippet-detail'),
     path('users/', views.UserList.as_view(), name='user-list'),
-    path('userss/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),
+    path('users/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),
     path('api-auth/', include('rest_framework.urls'), name='login'),
 ]
 
