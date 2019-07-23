@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/home/ayman/.virtualenvs/task_pastebin/bin/python",
+    "python.linting.pep8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
