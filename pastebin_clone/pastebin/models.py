@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class UserModel(AbstractUser):
-    num_snippets = models.IntegerField(default=0)
     # Flag to check if user is guest
     is_guest = models.BooleanField(default=False)
 
