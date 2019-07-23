@@ -4,7 +4,7 @@ from .models import Snippet
 from django.contrib.auth.models import User
 
 
-class SnipprtSerializer(serializers.ModelSerializer):
+class SnipprtSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
@@ -12,10 +12,10 @@ class SnipprtSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'content', 'created_at', 'owner']
 
 
-class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    snippets = serializers.HyperlinkedRelatedField(
         many=True, queryset=Snippet.objects.all())
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'snippets']
+        fields = ['url', 'id', 'username', 'snippets']
