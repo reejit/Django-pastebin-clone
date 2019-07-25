@@ -6,7 +6,7 @@ class Snippet(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(
-        'auth.User', related_name='snippets', on_delete=models.CASCADE)
+        'auth.User', related_name='snippets', on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         if self.title:
