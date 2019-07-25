@@ -1,10 +1,11 @@
 from django.db import models
+from django.utils.timezone import now
 
 
 class Snippet(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     content = models.TextField()
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(default=now)
     owner = models.ForeignKey(
         'auth.User', related_name='snippets', on_delete=models.CASCADE, blank=True, null=True)
 
