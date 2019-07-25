@@ -1,14 +1,18 @@
 from .models import Snippet
-from .serializers import SnipprtSerializer, UserSerializer
+from .serializers import SnippetSerializer, UserSerializer
 from .permissions import IsOwnerOrReadOnly, IsOwner
+from .filters import SnippetFilter
 from django.contrib.auth.models import User
 from rest_framework import viewsets, mixins
 from rest_framework import permissions
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class SnippetViewSet(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
-    serializer_class = SnipprtSerializer
+    serializer_class = SnippetSerializer
+    filter_backends = [DjangoFilterBackend, ]
+    filter_class = SnippetFilter
 
     def get_permissions(self):
         if self.action in ['update', 'partial_update', 'destroy']:
