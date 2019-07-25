@@ -2,7 +2,7 @@ from .models import Snippet
 from .serializers import SnipprtSerializer, UserSerializer
 from .permissions import IsOwnerOrReadOnly, IsOwner
 from django.contrib.auth.models import User
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework import permissions
 
 
@@ -18,9 +18,12 @@ class SnippetViewSet(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
     def perform_create(self, serializer):
-        return serializer.save(owner=self.request.user)
+        if self.request.user.is_anonymous:
+            return serializer.save()
+        else:
+            return serializer.save(owner=self.request.user)
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
+class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin, mixins.RetrieveModelMixin):
     queryset = User.objects.all()
     serializer_class = UserSerializer
