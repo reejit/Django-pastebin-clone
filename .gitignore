@@ -7,3 +7,7 @@ pastbinAPI/pastebin/__pycache__/models.cpython-37.pyc
 pastbinAPI/pastebin/__pycache__/serializers.cpython-37.pyc
 pastbinAPI/pastebin/__pycache__/urls.cpython-37.pyc
 pastbinAPI/pastebin/__pycache__/views.cpython-37.pyc
+pastbinAPI/pastbinAPI/__pycache__/settings.cpython-37.pyc
+pastbinAPI/pastebin/__pycache__/filters.cpython-37.pyc
+pastbinAPI/pastebin/__pycache__/models.cpython-37.pyc
+pastbinAPI/pastebin/__pycache__/permissions.cpython-37.pyc
