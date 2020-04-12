@@ -1,4 +1,4 @@
-# Task_pastebin
+# Django pastebn clone
 Django REST API clone of Pastebin website
 
 For All API endpoints
