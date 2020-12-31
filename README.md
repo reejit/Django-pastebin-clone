@@ -8,13 +8,13 @@
     • Each user can filter pastes by dates.
     • Each user can choose to share this snippet with certain users
     • token-based authentication system.
-    • Helper scripts to export statistics about the project in excel or csv (eg. Number of pastes for each user) 
-    • Each paste has a shortened URL 
     • Each paste can be either shared to public or  a certain users or set to private only for the creator
     
 # Run:
     clone repo
     pip install django==2.0.0 django_rest_framework==3.12.2
+    python manage.py makemigrations 
+    python manage.py migrate
     python manage.py runserver
     
 # For All API endpoints:
