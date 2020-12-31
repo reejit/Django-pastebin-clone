@@ -4,7 +4,7 @@
 
 # Features:
     • Each user can create edit delete any of his pastes.
-    •  allow anonymous guests to create pastes as well.
+    • allow anonymous guests to create pastes as well.
     • Each user can filter pastes by dates.
     • Each user can choose to share this snippet with certain users
     • token-based authentication system.
